@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #logo {
+      -webkit-transform: translate3d(0, 0, 0);
+      background: url(images/base.jpg) 47px 13px no-repeat;
+      height: 229px;
+      left: 150px;
+      position: absolute;
+      top: 50px;
+      width: 487px;
+    }
+  </style>
+</head>
+<body>
+  <div id=logo></div>
+  <script type="text/javascript">
+    goog = {};
+    goog.global = this;
+    // Just ignore these since the code is not compiled.
+    goog.provide = function() {};
+    goog.require = function() {};
+    goog.exportSymbol = function() {};
+    // Shamelessly snagged from closure.
+    goog.bindNative_ = function(fn, selfObj, var_args) {
+      return /** @type {!Function} */ (fn.call.apply(fn.bind, arguments));
+    };
+    goog.bindJs_ = function(fn, selfObj, var_args) {
+      if (!fn) {
+        throw new Error();
+      }
+      if (arguments.length > 2) {
+        var boundArgs = Array.prototype.slice.call(arguments, 2);
+        return function() {
+          var newArgs = Array.prototype.slice.call(arguments);
+          Array.prototype.unshift.apply(newArgs, boundArgs);
+          return fn.apply(selfObj, newArgs);
+        };
+      } else {
+        return function() {
+          return fn.apply(selfObj, arguments);
+        };
+      }
+    };
+    goog.bind = function(fn, selfObj, var_args) {
+      if (Function.prototype.bind &&
+          Function.prototype.bind.toString().indexOf('native code') != -1) {
+        goog.bind = goog.bindNative_;
+      } else {
+        goog.bind = goog.bindJs_;
+      }
+      return goog.bind.apply(null, arguments);
+    };
+    goog.partial = function(fn, var_args) {
+      var args = Array.prototype.slice.call(arguments, 1);
+      return function() {
+        // Prepend the bound arguments to the current arguments.
+        var newArgs = Array.prototype.slice.call(arguments);
+        newArgs.unshift.apply(newArgs, args);
+        return fn.apply(this, newArgs);
+      };
+    };
+    turing = {};
+    turing.anim = {};
+    turing.util = {};
+    turing.sprites = {};
+    turing.sprites.offsets = {};
+    turing.sprites.numberplate = {};
+    turing.deferredsprites = {};
+    turing.deferredsprites.offsets = {};
+    window.onload = function() {
+      turing.init();
+    };
+  </script>
+  <script src="src/bezier.js"></script>
+  <script src="src/util.js"></script>
+  <script src="src/anim.js"></script>
+  <script src="src/sprite_offsets.js"></script>
+  <script src="src/deferred_sprite_offsets.js"></script>
+  <script src="src/sprites.js"></script>
+  <script src="src/number_plate_sprite_offsets.js"></script>
+  <script src="src/target.js"></script>
+  <script src="src/controls.js"></script>
+  <script src="src/logo.js"></script>
+  <script src="src/overlay.js"></script>
+  <script src="src/program.js"></script>
+  <script src="src/tape.js"></script>
+  <script src="src/simulator.js"></script>
+  <script src="src/game_state.js"></script>
+  <script src="src/turing.js"></script>
+</body>
+</html>
