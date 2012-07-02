@@ -26,7 +26,6 @@ goog.require('turing.Program');
 goog.require('turing.Simulator');
 goog.require('turing.Tape');
 goog.require('turing.Target');
-goog.require('turing.Tooltip');
 goog.require('turing.anim');
 goog.require('turing.sprites');
 goog.require('turing.util');
@@ -290,10 +289,10 @@ turing.PROGRAMS = [
 
 /**
  * A bonus program displayed only in a special mode which the user can trigger
- * somehow after winning the game. This program prints the rabbit sequence,
- * which is a bitstring with many beautiful relationships to Fibonacci numbers
- * and the golden ratio. More immediately, it implements the substitution system
- * with rules 1 -> 10, 0 -> 1.
+ * after winning the game. This program prints the rabbit sequence, which is a
+ * bitstring with many beautiful relationships to Fibonacci numbers and the
+ * golden ratio. More immediately, it implements the substitution system with
+ * rules 1 -> 10, 0 -> 1.
  * @type {Array.<Array.<string>>}
  * @const
  */
