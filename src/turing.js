@@ -26,7 +26,6 @@ goog.require('turing.Program');
 goog.require('turing.Simulator');
 goog.require('turing.Tape');
 goog.require('turing.Target');
-goog.require('turing.Tooltip');
 goog.require('turing.anim');
 goog.require('turing.sprites');
 goog.require('turing.util');
