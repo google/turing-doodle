@@ -5,4 +5,13 @@ appeared on the Google homepage on 23 June 2012 to celebrate Alan Turing's
 
 http://www.google.com/doodles/alan-turings-100th-birthday
 
-To view, open index.html in a web browser.
+Please feel welcome to extend and enjoy!
+
+License notes
+
+We are sharing the code of the doodle under the Apache 2.0 License, but the
+images and animations accompanying the doodle under the Creative Commons
+BY-NC-SA 3.0 License. The big difference between those two is that the first
+one allows commercial re-use, whereas the second one forbids it. This is mainly
+to protect our Google logo; contributions of original, unbranded artwork would
+be welcome.
